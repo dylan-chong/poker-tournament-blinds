@@ -40,16 +40,17 @@ LEVELS = [
     { 'type': 'blinds',   'small': 2,       'big': 4,             'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 3,       'big': 6,             'duration': SECONDS_PER_LEVEL  },
 
-    { 'type': 'break',    'message': 'Break,\n  No more rebuys',  'duration': 5 * 60             },
+    { 'type': 'break',    'message': 'Break,\n  No more re-buys', 'duration': 5 * 60             },
     { 'type': 'blinds',   'small': 5,       'big': 10,            'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 8,       'big': 15,            'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 10,      'big': 20,            'duration': SECONDS_PER_LEVEL  },
+    { 'type': 'blinds',   'small': 15,      'big': 30,            'duration': SECONDS_PER_LEVEL  },
 
     { 'type': 'break',    'message': 'Break',                     'duration': 5 * 60             },
-    { 'type': 'blinds',   'small': 15,      'big': 30,            'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 25,      'big': 50,            'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 40,      'big': 80,            'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 50,      'big': 100,           'duration': SECONDS_PER_LEVEL  },
+    { 'type': 'blinds',   'small': 100,     'big': 200,           'duration': SECONDS_PER_LEVEL  },
 ]
 
 # 3h tournament
