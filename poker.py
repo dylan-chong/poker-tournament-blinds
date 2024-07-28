@@ -3,9 +3,10 @@ import time
 import datetime
 import os
 import re
-from art import text2art, FONT_NAMES
+from art import text2art
 
 # Uncomment to print fonts
+# from art import FONT_NAMES
 # for f in FONT_NAMES:
 #     print(f)
 #     print(text2art('33:04 / break', font=f))
@@ -36,7 +37,7 @@ SECONDS_PER_LEVEL = 15 * 60
 LEVELS = [
     { 'type': 'blinds',   'small': 1,       'big': 1,             'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 1,       'big': 2,             'duration': SECONDS_PER_LEVEL  },
-    { 'type': 'blinds',   'small': 2,       'big': 3,             'duration': SECONDS_PER_LEVEL  },
+    { 'type': 'blinds',   'small': 2,       'big': 4,             'duration': SECONDS_PER_LEVEL  },
     { 'type': 'blinds',   'small': 3,       'big': 6,             'duration': SECONDS_PER_LEVEL  },
 
     { 'type': 'break',    'message': 'Break,\n  No more rebuys',  'duration': 5 * 60             },
