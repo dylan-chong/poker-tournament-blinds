@@ -1,3 +1,4 @@
+import argparse
 import time
 import datetime
 import os
@@ -82,7 +83,15 @@ def format_level_speech(level):
     else:
         raise Exception('Unknown level type')
 
-def main():
+def speak(message, program_args):
+    if "'" in message:
+        raise ValueError("String contains a single quote!")
+    speech_command = program_args.speech_command
+    if not speech_command:
+        return
+    os.system(f"{speech_command} '{message}' &")
+
+def main(program_args):
     level_i = START_LEVEL
     time_passed = START_TIME_PASSED
 
@@ -95,9 +104,9 @@ def main():
         time_left = duration - time_passed
 
         if time_passed == 1 or time_passed == 6:
-            os.system(f'say "the current stage is {format_level_speech(level)}" &')
+            speak(f'the current stage is {format_level_speech(level)}', program_args)
         elif time_left >= 0 and time_left <= 4:
-            os.system(f'say "{time_left + 1}" &')
+            speak(f'{time_left + 1}', program_args)
 
         print('\n' * 25)
         time_msg = f'{INDENT}{format_seconds(time_left)} / {format_seconds(duration)}'
@@ -113,8 +122,13 @@ def main():
         time_passed = time_passed + 1
 
         if time_passed == duration:
-            level_i = level + 1
+            level_i = level_i + 1
             time_passed = 0
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='Process some arguments.')
+    parser.add_argument('--speech-command', type=str, help='Speech command argument')
+    args = parser.parse_args()
+
+    # Access the value of --speech-command
+    main(args)
