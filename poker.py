@@ -114,7 +114,7 @@ def speak(message, program_args):
     os.system(f"{speech_command} '{message}' &")
 
 def display_state(time_left, duration, level, next_level):
-    print('\n' * 25)
+    print('\n' * 150)
     time_msg = f'{INDENT}{format_seconds(time_left)} / {format_seconds(duration)}'
     print(text2art(time_msg, font=FONT))
     for line in format_level_display(level, 'Blinds: '):
